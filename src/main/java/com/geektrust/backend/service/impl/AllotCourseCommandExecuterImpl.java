@@ -26,7 +26,7 @@ public class AllotCourseCommandExecuterImpl implements CommandExecuter{
             }
         }
         else{
-            throw new InvalidInputException("Input data error");
+            throw new InvalidInputException("INPUT_DATA_ERROR");
         }
     }
 

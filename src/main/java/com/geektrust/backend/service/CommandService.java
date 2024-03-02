@@ -29,13 +29,13 @@ public class CommandService {
 
         }
         catch(Exception e){
-            throw new InvalidInputException("Input Data Error");
+            throw new InvalidInputException("INPUT_DATA_ERROR");
         }
     }
 
     private void validateInput(CommandOperator inputCommand,Command command) throws InvalidInputException{
         if(inputCommand.getNumberOfArguments() != command.getCommandParams().size()){
-            throw new InvalidInputException("Input Data Error");
+            throw new InvalidInputException("INPUT_DATA_ERROR");
         }
     }
 }

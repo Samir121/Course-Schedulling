@@ -29,7 +29,7 @@ public class AddCourseCommandExecuterImpl implements CommandExecuter{
             course = new Course("OFFERING-"+courseName+"-"+courseInstructor,courseName,courseInstructor,date,minCount,maxCount,false,false);
         }
         catch(Exception e){
-            throw new InvalidInputException("Input Error");
+            throw new InvalidInputException("INPUT_DATA_ERROR");
         }
         return course;
     }
