@@ -1,6 +1,6 @@
 package com.geektrust.backend.models;
 
-import java.util.regex.Pattern;
+import com.geektrust.backend.constants.Constants;
 import com.geektrust.backend.exception.InvalidInputException;
 
 public class Employee {
@@ -8,14 +8,18 @@ public class Employee {
     private final String emailAddress;
 
     public Employee(String emailAddress) throws InvalidInputException {
-        String regex = "^[a-zA-Z0-9_!#$%&'*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$";
-        Pattern pattern = Pattern.compile(regex);
-        if(pattern.matcher(emailAddress).matches()){
+        // String regex = "^[a-zA-Z0-9_!#$%&'*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$";
+        // Pattern pattern = Pattern.compile(regex);
+        // if(pattern.matcher(emailAddress).matches()){
+        //     this.emailAddress = emailAddress;
+        //     this.name = this.emailAddress.substring(0,this.emailAddress.indexOf('@'));
+        // }
+        if (Constants.VALID_EMAIL_ADDRESS_REGEX.matcher(emailAddress).matches()) {
             this.emailAddress = emailAddress;
-            this.name = this.emailAddress.substring(0,this.emailAddress.indexOf('@'));
+            this.name = this.emailAddress.substring(0, this.emailAddress.indexOf('@'));
         }
         else{
-            throw new InvalidInputException("Invalid Email Error");
+            throw new InvalidInputException("INPUT_DATA_ERROR");
         }
     }
 
