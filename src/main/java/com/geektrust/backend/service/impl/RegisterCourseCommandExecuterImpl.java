@@ -13,6 +13,8 @@ public class RegisterCourseCommandExecuterImpl implements CommandExecuter{
     @Override
     public void executeCommand(TreeMap<String, Course> courses, Map<String, Course> registrationIdCourseMap, Command command) throws InvalidInputException, CourseFullException {
         String courseID = command.getCommandParams().get(1);
+        // System.out.println(command.getCommandParams().get(0));
+        // System.out.println(courses.containsKey(courseID));
         Employee employee = ConstructEmployeeObject(command);
         if(courses.containsKey(courseID)){
             Course course = courses.get(courseID);
