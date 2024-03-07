@@ -26,7 +26,7 @@ public class CancelCourseCommandExecuterImpl implements CommandExecuter{
 
     private void removeRegisteredEmployee(String regId,Map<String,Course> registrationIdCourseMap){
         Course course = registrationIdCourseMap.get(regId);
-        course.getRegisteredEmployee().remove(regId);
+        course.getRegisteredEmployees().remove(regId);
         registrationIdCourseMap.remove(regId);
     }
 

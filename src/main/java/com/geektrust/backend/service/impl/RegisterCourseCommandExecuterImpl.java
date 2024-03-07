@@ -19,7 +19,7 @@ public class RegisterCourseCommandExecuterImpl implements CommandExecuter{
         if(courses.containsKey(courseID)){
             Course course = courses.get(courseID);
             if(!courses.get(courseID).isAllotted() || courses.get(courseID).isCancelled()){
-                if(course.getRegisteredEmployee().size()==course.getMaxCapacity()){
+                if(course.getRegisteredEmployees().size()==course.getMaxCapacity()){
                     throw new CourseFullException("COURSE_FULL_ERROR");
                 }else{
                     //register the employee to course......

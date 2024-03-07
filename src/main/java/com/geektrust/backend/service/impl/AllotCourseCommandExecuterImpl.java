@@ -16,7 +16,7 @@ public class AllotCourseCommandExecuterImpl implements CommandExecuter{
         String courseId = command.getCommandParams().get(0);
         Course course = courses.get(courseId);
         if(course != null){
-            if(course.getRegisteredEmployee().size() < course.getMinCapacity()){
+            if(course.getRegisteredEmployees().size() < course.getMinCapacity()){
                 course.setCancelled(true);
                 printCourseData(course);
             }
@@ -32,7 +32,7 @@ public class AllotCourseCommandExecuterImpl implements CommandExecuter{
 
     private void printCourseData(Course course){
         String status = course.isCancelled()?"COURSE_CANCELLED":"CONFIRMED";
-        for(Map.Entry<String, Employee> emp:course.getRegisteredEmployee().entrySet()){
+        for(Map.Entry<String, Employee> emp:course.getRegisteredEmployees().entrySet()){
             String pattern = "ddMMyyyy";
             DateFormat df = new SimpleDateFormat(pattern);
             System.out.println(emp.getKey()+" "+emp.getValue().getEmailAddress()+" "+course.getCourseId()+" "+course.getCourseName()+" "+course.getInstructor()+" "

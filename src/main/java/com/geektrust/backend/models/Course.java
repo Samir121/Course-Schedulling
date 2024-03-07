@@ -69,7 +69,7 @@ public class Course implements Comparable<Course>{
         return isCancelled;
     }
 
-    public Map<String, Employee> getRegisteredEmployee() {
+    public Map<String, Employee> getRegisteredEmployees() {
         return registeredEmployees;
     }
 

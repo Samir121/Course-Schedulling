@@ -21,20 +21,20 @@ public class CommandService {
     public Command getCommandFromString(String input) throws InvalidInputException {
         try {
             String[] commandWithArguments = input.split(" ");
+            // System.out.println(commandWithArguments[0]);
             CommandOperator operator = CommandOperator.valueOf(Constants.getValue(commandWithArguments[0]));
             List<String> commandParams = Arrays.stream(commandWithArguments).skip(1).collect(Collectors.toList());
             Command command = new Command(operator, commandParams);
             this.validateInput(operator, command);
             return command;
-
-        }
-        catch(Exception e){
+        }catch(Exception e){
+            // System.out.println(e.getMessage());
             throw new InvalidInputException("INPUT_DATA_ERROR");
         }
     }
 
     private void validateInput(CommandOperator inputCommand,Command command) throws InvalidInputException{
-        if(inputCommand.getNumberOfArguments() != command.getCommandParams().size()){
+        if (inputCommand.getNumberOfArguments() != command.getCommandParams().size()){
             throw new InvalidInputException("INPUT_DATA_ERROR");
         }
     }
