@@ -1,18 +1,13 @@
 package com.geektrust.backend;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
-@DisplayName("App Test")
 class AppTest {
-
-    @Test
     public void Application_Test() throws Exception{
         // Arrange
         // Act   
         // Assert
-        Assertions.assertTrue(true);
+        assertTrue(true);
     }
 
 }
