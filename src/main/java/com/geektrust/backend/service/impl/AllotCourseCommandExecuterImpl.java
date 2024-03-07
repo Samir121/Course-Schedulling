@@ -31,7 +31,7 @@ public class AllotCourseCommandExecuterImpl implements CommandExecuter{
     }
 
     private void printCourseData(Course course){
-        String status = course.isCancelled()?"COURSE_CANCELLED":"CONFIRMED";
+        String status = course.isCancelled()?"COURSE_CANCELED":"CONFIRMED";
         for(Map.Entry<String, Employee> emp:course.getRegisteredEmployees().entrySet()){
             String pattern = "ddMMyyyy";
             DateFormat df = new SimpleDateFormat(pattern);
