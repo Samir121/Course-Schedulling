@@ -32,4 +32,11 @@ public class AddCourseCommandExecutorImplTest {
      public void executeCommandTest(){
         assertDoesNotThrow(() -> commandExecutorTest.executeCommand(courses,registrationIdCourseMap,commandTest));
      }
+
+     @Test
+     public void executeCommandTest1() throws InvalidInputException{
+      Command command1 = CommandService.getInstance().getCommandFromString("ADD-COURSE-OFFERING PYTHON JOHN 05062022 1 3");
+      CommandExecuter commandExecuterTest1 = CommandExecutionFactory.getExecutor(command1);
+      assertDoesNotThrow(()->commandExecuterTest1.executeCommand(courses,registrationIdCourseMap,command1));
+     }
 }
