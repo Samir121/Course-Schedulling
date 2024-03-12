@@ -20,8 +20,16 @@ public class CommandOperatorTest {
 
     @Test
     public void getNumberOfArgumentsTest(){
-        assertEquals(1,Optional.of(CommandOperator.ALLOT.getNumberOfArguments()).get());
+        assertEquals(1,Optional.of(CommandOperator.ALLOT.getNumberOfArguments()).get()); 
+    }
+
+    @Test
+    public void getNumberOfArgumentsTest1(){
         assertEquals(5,Optional.of(CommandOperator.ADD_COURSE_OFFERING.getNumberOfArguments()).get());
+    }
+
+    @Test
+    public void getNumberOfArgumentsTest2(){
         assertEquals(2,Optional.of(CommandOperator.REGISTER.getNumberOfArguments()).get());
     }
 }

@@ -20,5 +20,17 @@ public class CommandServiceTest {
         input = "REGISTER ALICE@GMAIL.COM";
         assertThrows(InvalidInputException.class,()->CommandService.getInstance().getCommandFromString(input));
     }
+
+    @Test
+    public void getCommandFromStringTest2(){
+        input = "REGISTER WOO@GMAIL.COM OFFERING-DATASCIENCE-BOB";
+        assertDoesNotThrow(()->CommandService.getInstance().getCommandFromString(input));
+    }
+
+    @Test
+    public void getCommandFromStringTest3(){
+        input = "REGISTER ANDY@GMAIL.COM";
+        assertThrows(InvalidInputException.class,()->CommandService.getInstance().getCommandFromString(input));
+    }
     
 }
